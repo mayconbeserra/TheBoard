@@ -1,0 +1,23 @@
+{
+  "name": "TheBoard",
+  "version": "0.0.1",
+  "description": "A message board on sticky notes.",
+  "main": "server.js",
+  "author": {
+    "name": "Maycon.Beserra",
+    "email": ""
+  },
+  "dependencies": {
+    "ejs": "^2.3.4",
+    "ejs-locals": "^1.0.2",
+    "express": "^4.13.3",
+    "express-handlebars": "^2.0.1",
+    "jade": "^1.11.0",
+    "underscore": "^1.8.3",
+    "vash": "^0.9.3"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-nodemon": "^0.4.0"
+  }
+}
