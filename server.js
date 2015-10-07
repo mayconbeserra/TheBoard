@@ -18,7 +18,8 @@ var session       = require('express-session');
 app.set("view engine", "vash");
 
 //opt into services
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(session({
   secret: 'myNodeJSCourse',
@@ -29,7 +30,7 @@ app.use(session({
 app.use(flash());
 
 //set the public static resource folder
-app.use(express.static(__dirname + "/public"));
+app.use(express.static(__dirname + '/public'));
 
 //Map routes
 controllers.init(app);
