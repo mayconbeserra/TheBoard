@@ -8,10 +8,13 @@
     "email": ""
   },
   "dependencies": {
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.0",
     "ejs": "^2.3.4",
     "ejs-locals": "^1.0.2",
     "express": "^4.13.3",
     "express-handlebars": "^2.0.1",
+    "express-session": "^1.11.3",
     "jade": "^1.11.0",
     "mongodb": "^2.0.45",
     "underscore": "^1.8.3",

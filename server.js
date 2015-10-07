@@ -1,8 +1,12 @@
-﻿var http = require("http");
-var express = require("express");
-var app = express();
-var controllers = require("./controllers");
-var handleBars = require("express-handlebars");
+﻿var http          = require('http');
+var express       = require('express');
+var app           = express();
+var controllers   = require('./controllers');
+var handleBars    = require('express-handlebars');
+var bodyParser    = require('body-parser');
+var flash         = require('connect-flash');
+var cookieParser  = require('cookie-parser');
+var session       = require('express-session');
 
 //var ejsEngine = require("ejs-locals");
 
@@ -12,6 +16,19 @@ var handleBars = require("express-handlebars");
 //app.set("view engine", "ejs"); //ejs view engine
 
 app.set("view engine", "vash");
+
+//opt into services
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(session({
+  secret: 'myNodeJSCourse',
+  resave: true,
+  saveUninitialized: true,
+  cookie: { secure: false }
+}));
+app.use(flash());
+
+//set the public static resource folder
 app.use(express.static(__dirname + "/public"));
 
 //Map routes
