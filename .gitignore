@@ -27,4 +27,6 @@ build/Release
 node_modules
 
 # Dependency library
-public/lib
+!/public/lib
+/public/lib/*
+!/public/lib/js
