@@ -3,6 +3,7 @@
     var data = require("../dataService");
 
     homeController.init = function (app) {
+
         app.get("/", function (req, res) {
             data.getNoteCategories(function(err, results) {
                 res.render("vash/index", {
@@ -12,6 +13,11 @@
                   newCatError: req.flash("newCatNameValidation")
                 });
             });
+        });
+
+        app.get("/notes/:categoryName", function (req, res) {
+            var categoryName = req.params.categoryName;
+            res.render('vash/notes', { title: categoryName });
         });
 
         app.post("/newCategory", function (req, res){
