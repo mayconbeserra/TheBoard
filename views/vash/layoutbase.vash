@@ -3,7 +3,7 @@
 		<title>@model.title</title>
 		<link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
 		<link href="/lib/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
-		@html.block("head");
+		@html.block("head")
 		<link href="/css/site.css" rel="stylesheet" />
 	</head>
 	<body>
@@ -23,6 +23,12 @@
 				<ul class="nav navbar-nav navbar-right">
 				<li class="nav">
 					<a href="/">Home</a>
+				</li>
+				<li class="nav">
+					<a href="/register">Register</a>
+				</li>
+				<li class="nav">
+					<a href="/login">Login</a>
 				</li>
 				</ul>
 			</div>

@@ -7,6 +7,7 @@ var bodyParser    = require('body-parser');
 var flash         = require('connect-flash');
 var cookieParser  = require('cookie-parser');
 var session       = require('express-session');
+var auth          = require('./auth');
 
 //var ejsEngine = require("ejs-locals");
 
@@ -31,6 +32,9 @@ app.use(flash());
 
 //set the public static resource folder
 app.use(express.static(__dirname + '/public'));
+
+//use authentication
+auth.init(app);
 
 //Map routes
 controllers.init(app);
