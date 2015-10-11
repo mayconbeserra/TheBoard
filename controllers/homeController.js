@@ -10,14 +10,15 @@
                   title: "Express + Vash in controller",
                   error: err,
                   categories: results,
-                  newCatError: req.flash("newCatNameValidation")
+                  newCatError: req.flash("newCatNameValidation"),
+                  user: req.user
                 });
             });
         });
 
         app.get("/notes/:categoryName", function (req, res) {
             var categoryName = req.params.categoryName;
-            res.render('vash/notes', { title: categoryName });
+            res.render('vash/notes', { title: categoryName, user: req.user });
         });
 
         app.post("/newCategory", function (req, res){
