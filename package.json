@@ -1,11 +1,11 @@
 {
   "name": "TheBoard",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A message board on sticky notes.",
   "main": "server.js",
   "author": {
     "name": "Maycon.Beserra",
-    "email": ""
+    "email": "mayconbeserra@gmail.com"
   },
   "dependencies": {
     "connect-flash": "^0.1.1",

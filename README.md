@@ -8,4 +8,20 @@ As part of R&D, this project uses the MEAN stack (MEAN is a framework for an eas
 
 ## Features
 
-TODO
++ Login
++ Register a user
++ Register a category
++ Register notes for the category
+
+## Tech stack
+
++ Mongo
++ Express
++ Angular
++ Node
+
+## ToDo list
+
++ Create some unit tests
++ Resize the images for the notesUrl
++ Use sockets to enable two users to create/update notes simultanely
