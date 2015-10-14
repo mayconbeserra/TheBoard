@@ -1,6 +1,7 @@
 ﻿(function (homeController) {
 
     var data = require("../dataService");
+    var auth = require("../auth");
 
     homeController.init = function (app) {
 
@@ -16,7 +17,9 @@
             });
         });
 
-        app.get("/notes/:categoryName", function (req, res) {
+        app.get("/notes/:categoryName",
+          auth.ensureAuthenticated,
+          function (req, res) {
             var categoryName = req.params.categoryName;
             res.render('vash/notes', { title: categoryName, user: req.user });
         });

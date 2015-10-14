@@ -1,19 +1,23 @@
 (function (notesController) {
+
   var data = require('../dataService');
+  var auth = require('../auth');
 
   notesController.init = function (app) {
     // GET
-    app.get('/api/notes/:categoryName', function (req, res){
-      var categoryName = req.params.categoryName;
+    app.get('/api/notes/:categoryName',
+      auth.ensureApiAuthenticated,
+      function (req, res){
+        var categoryName = req.params.categoryName;
 
-      data.getNotes(categoryName, function (err, notes){
-        if (err) {
-          res.send(400, err);
-        } else {
-          res.set('Content-Type', 'application/json');
-          res.send(notes);
-        }
-      });
+        data.getNotes(categoryName, function (err, notes){
+          if (err) {
+            res.send(400, err);
+          } else {
+            res.set('Content-Type', 'application/json');
+            res.send(notes);
+          }
+        });
     });
 
     //POST
